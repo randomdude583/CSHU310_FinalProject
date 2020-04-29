@@ -443,6 +443,7 @@ public class Project {
 		System.out.println("price: Double value");
 		System.out.println("PurchaseQuantity: integer value. Must be positive");
 		System.out.println("ShipmentQuantity: integer value. Must be positive");
+		System.out.println("Format Dates as yyyy-MM-dd");
 		System.out.println("\n\n");
 		
 	}

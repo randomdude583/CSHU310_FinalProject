@@ -280,10 +280,10 @@ public class SQLHandler {
   		sql = "CREATE TABLE items(id int auto_increment, itemCode varchar(10) NOT NULL UNIQUE, itemDescription  varchar(50), price decimal(4,2) default 0, primary key (id));";
   		sqlStatement.executeUpdate(sql);
   		
-  		sql = "CREATE TABLE purchases(id int auto_increment, itemID int, quantity int NOT NULL, purchaseTime datetime DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (itemID) REFERENCES items (id), primary key (id));";
+  		sql = "CREATE TABLE purchases(id int auto_increment, itemID int NOT NULL, quantity int NOT NULL, purchaseDate datetime DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (itemID) REFERENCES items (id), primary key (id));";
   		sqlStatement.executeUpdate(sql);
   		
-  		sql = "CREATE TABLE shipments(id int auto_increment, itemID int, quantity int NOT NULL, purchaseTime datetime NOT NULL UNIQUE, FOREIGN KEY (itemID) REFERENCES items (id), primary key (id));";
+  		sql = "CREATE TABLE shipments(id int auto_increment, itemID int, quantity int NOT NULL, shipmentDate datetime NOT NULL UNIQUE, FOREIGN KEY (itemID) REFERENCES items (id), primary key (id));";
   		sqlStatement.executeUpdate(sql);
   		
   		connection.close();

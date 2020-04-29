@@ -1,8 +1,8 @@
 CREATE TABLE purchases(
 	id           int auto_increment,
-    itemID       int,
+    itemID       int NOT NULL,
     quantity     int NOT NULL,
-    purchaseTime datetime DEFAULT CURRENT_TIMESTAMP,
+    purchaseDate datetime DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (itemID) REFERENCES items (id),
     primary key (id)
 );
