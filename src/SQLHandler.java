@@ -253,5 +253,39 @@ public class SQLHandler {
         sqlStatement.executeUpdate(sql);
         connection.close();
 	}
-
+	
+	
+	
+	//---------------------------  INITIALIZE DATABASE  ------------------------
+	
+	public static void initDB() throws SQLException{
+  		Connection connection = null;
+  		
+  		connection = MySqlDatabase.getDatabaseConnection();
+  		Statement sqlStatement = connection.createStatement();
+  		
+  		String sql = "";
+  		
+		sql = "SET FOREIGN_KEY_CHECKS = 0;";
+		sqlStatement.executeUpdate(sql);
+		sql = "DROP TABLE IF EXISTS items;";
+		sqlStatement.executeUpdate(sql);
+		sql = "DROP TABLE IF EXISTS purchases;";
+		sqlStatement.executeUpdate(sql);
+		sql = "DROP TABLE IF EXISTS shipments;";
+		sqlStatement.executeUpdate(sql);
+		sql = "SET FOREIGN_KEY_CHECKS = 1;";
+		sqlStatement.executeUpdate(sql);
+  		
+  		sql = "CREATE TABLE items(id int auto_increment, itemCode varchar(10) NOT NULL UNIQUE, itemDescription  varchar(50), price decimal(4,2) default 0, primary key (id));";
+  		sqlStatement.executeUpdate(sql);
+  		
+  		sql = "CREATE TABLE purchases(id int auto_increment, itemID int, quantity int NOT NULL, purchaseTime datetime DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (itemID) REFERENCES items (id), primary key (id));";
+  		sqlStatement.executeUpdate(sql);
+  		
+  		sql = "CREATE TABLE shipments(id int auto_increment, itemID int, quantity int NOT NULL, purchaseTime datetime NOT NULL UNIQUE, FOREIGN KEY (itemID) REFERENCES items (id), primary key (id));";
+  		sqlStatement.executeUpdate(sql);
+  		
+  		connection.close();
+  	}
 }

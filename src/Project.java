@@ -165,6 +165,16 @@ public class Project {
 	            System.out.println(sqlException.getMessage());
 	        }
 			
+			
+		//------------------------  INITIALIZE DATABASE  ---------------------------
+			
+		} else if(args[0].contentEquals("InitializeDB")) {
+			try {
+				SQLHandler.initDB();
+			} catch (SQLException sqlException) {
+				System.out.println("Failed to initialize database");
+				System.out.println(sqlException.getMessage());
+			}
 		}
 		
 		
@@ -189,8 +199,14 @@ public class Project {
  		}
  		
  		
+ 		//Print Usage
+ 		if(args[0].contentEquals("/?")) {
+ 			printUsage();
+ 			System.exit(1);
+ 		
+ 		
 		//CreateItem <itemCode> <itemDescription> <price>
-		if(args[0].contentEquals("CreateItem")) {
+ 		} else if(args[0].contentEquals("CreateItem")) {
 			if(args.length != 3 && args.length != 4) {
 				System.out.println("Wrong Format!");
 				printUsage();
@@ -389,6 +405,9 @@ public class Project {
 				System.exit(1);
 			}
 			
+		} else if(args[0].contentEquals("InitializeDB")) {
+			
+			
 			
 		} else {
 			System.out.println("Not a valid command!");
@@ -415,6 +434,7 @@ public class Project {
 		System.out.println("DeleteItem <itemCode>");
 		System.out.println("DeleteShipment <itemCode>");
 		System.out.println("DeletePurchase <itemCode>");
+		System.out.println("InitializeDB");
 		System.out.println("");
 		System.out.println("Arguments");
 		System.out.println("----------------------------------");
