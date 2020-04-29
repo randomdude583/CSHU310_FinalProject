@@ -40,9 +40,9 @@ This project simulates a basic inventory system for a concession stand.
 - DeletePurchase <itemCode>
 
 ## Arguments
-itemCode:  String with maximum of 10 characters
-itemDescription: String with maximum of 50 characters
-price: Double value
-PurchaseQuantity: integer value. Must be positive
-ShipmentQuantity: integer value. Must be positive
+- itemCode:  String with maximum of 10 characters
+- itemDescription: String with maximum of 50 characters
+- price: Double value
+- PurchaseQuantity: integer value. Must be positive
+- ShipmentQuantity: integer value. Must be positive
 
