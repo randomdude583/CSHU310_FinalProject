@@ -182,6 +182,13 @@ public class Project {
 	
 	
  	public static void checkArgs(String[] args) {
+ 		//Check if any arguments exist
+ 		if(args.length == 0) {
+ 			printUsage();
+ 			System.exit(1);
+ 		}
+ 		
+ 		
 		//CreateItem <itemCode> <itemDescription> <price>
 		if(args[0].contentEquals("CreateItem")) {
 			if(args.length != 3 && args.length != 4) {
