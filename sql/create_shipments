@@ -1,0 +1,8 @@
+CREATE TABLE shipments(
+	id           int auto_increment,
+    itemID       int,
+    quantity     int NOT NULL,
+    purchaseTime datetime NOT NULL UNIQUE,
+    FOREIGN KEY (itemID) REFERENCES items (id),
+    primary key (id)
+);

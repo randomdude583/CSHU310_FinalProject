@@ -1,0 +1,7 @@
+CREATE TABLE items(
+    id               int auto_increment,
+    itemCode         varchar(10) NOT NULL UNIQUE,
+    itemDescription  varchar(50),
+    price            decimal(4,2) default 0,
+    primary key (id)
+);
