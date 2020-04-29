@@ -44,4 +44,5 @@ This project simulates a basic inventory system for a concession stand.
 - price: Double value
 - PurchaseQuantity: integer value. Must be positive
 - ShipmentQuantity: integer value. Must be positive
+- Format Dates as yyyy-MM-dd
 
