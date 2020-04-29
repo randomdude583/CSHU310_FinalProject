@@ -27,17 +27,17 @@ This project simulates a basic inventory system for a concession stand.
   
 
 ## Methods:
-CreateItem <itemCode> <itemDescription> <price>
-CreatePurchase <itemCode> <PurchaseQuantity>
-CreateShipment <itemCode> <ShipmentQuantity> <shipmentDate>
-GetItems <itemCode>
-GetShipments <itemCode>
-GetPurchases <itemCode>
-ItemsAvailable <itemCode>
-UpdateItem <itemCode> <price>
-DeleteItem <itemCode>
-DeleteShipment <itemCode>
-DeletePurchase <itemCode>
+- CreateItem <itemCode> <itemDescription> <price>
+- CreatePurchase <itemCode> <PurchaseQuantity>
+- CreateShipment <itemCode> <ShipmentQuantity> <shipmentDate>
+- GetItems <itemCode>
+- GetShipments <itemCode>
+- GetPurchases <itemCode>
+- ItemsAvailable <itemCode>
+- UpdateItem <itemCode> <price>
+- DeleteItem <itemCode>
+- DeleteShipment <itemCode>
+- DeletePurchase <itemCode>
 
 ## Arguments
 itemCode:  String with maximum of 10 characters
