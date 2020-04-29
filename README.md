@@ -13,14 +13,12 @@ This project simulates a basic inventory system for a concession stand.
   - export MYSQL_PORT=
   - export MYSQL_USERNAME=
   - export MYSQL_PASSWORD=
-  
-- Using a sql editor, set up the tables by executing the SQL code in the following files
-  - create_items
-  - create_purchases
-  - create_shipments
-  
+    
 - In a terminal, compile the program by running 
   `$javac Project.java`
+  
+- Run `$java Project InitializeDB` to initialize the tables. 
+  -WARNING, THIS WILL ERASE EXISTING DATA
 
 - Run the program by running 
   `$java Project <arguments>`
@@ -38,9 +36,10 @@ This project simulates a basic inventory system for a concession stand.
 - DeleteItem <itemCode>
 - DeleteShipment <itemCode>
 - DeletePurchase <itemCode>
+- InitializeDB
 
 ## Arguments
-- itemCode:  String with maximum of 10 characters
+- itemCode:  String with maximum of 10 characters. Use '%' to match all records
 - itemDescription: String with maximum of 50 characters
 - price: Double value
 - PurchaseQuantity: integer value. Must be positive
